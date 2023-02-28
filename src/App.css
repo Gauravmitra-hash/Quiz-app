@@ -1,38 +1,260 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Nav Bar style */
+.navMain{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fbfbfb;
+  /* border-bottom: 1px solid rgba(220, 20, 60, 0.299); */
+}
+.navMain > div > p{
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 5px;
+}
+.navMain > ul {
+  display: flex;
+  list-style: none;
+}
+.navMain > ul > li {
+  margin: 15px;
+}
+.nav-link{
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 5px;
+  transition: 0.5s all;
+}
+.nav-link:hover{
+  color: red;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.07);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Home style */
+
+.Container{
+  background-color: #ffffff;
+  width: 100%;
+  height: 90vh;
+}
+.Container > .cardBox{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  width: 350px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.07);
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 65px;
+  border: 0.5px solid crimson;
+}
+.Container > .cardBox > .quiz-instruction{
+  display: flex;
+  gap: 1.5rem;
+  text-align: center;
+  margin: 5px;
+}
+.Container > .cardBox > .quiz-instruction > p{
+  display: flex;
+  flex-direction: column;
+}
+
+.Container > .cardBox > .startQuiz{
+  background-color: crimson;
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s all;
+}
+.Container > .cardBox > .startQuiz:hover{
+  letter-spacing: 1.1px;
+}
+
+.Container > .cardBox > .box {
+  width: 100%;
+  height: auto;
+}
+.Container > .cardBox > .box > img{
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  transition: 0.5s all;
+  z-index: -99999;
+}
+.Container > .cardBox > .box > img:hover{
+  transform: scale(1.2) translateY(-10px);
+  
+}
+
+/* Quiz card style */
+
+.quiz-card,.container-login{
+  background-color: #fff;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 5px 5px 6px rgba(73, 73, 73, 0.084);
+  border: 0.5px solid crimson;
+  border-radius: 3px;
+  overflow: hidden;
+  
+}
+.quiz-card > .quiz-question-counter,.login-heading {
+  width: 100%;
+  background-color: crimson;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  border: 0.5px solid crimson;
+  z-index: 9999999999999;
+}
+
+.quiz-question{
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  user-select: none;
+}
+.quiz-option{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+.quiz-option > .option{
+  width: 150px;
+  background-color: crimson;
+  padding: 10px;
+  text-align: center;
+  border-radius: 3px;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: 0.5s all;
 }
 
-.App-link {
-  color: #61dafb;
+.quiz-option > .option:hover{
+  background-color: rgb(129, 6, 31);
+  transform: scale(1.01);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quiz-nav-btn{
+  text-align: center;
+  cursor: pointer;
+}
+
+.quiz-nav-btn > button{
+  outline: none;
+  border: none;
+  padding: 20px;
+  width: 100px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.648);
+  color: #fff;
+}
+.quiz-nav-btn > .quiz-next{
+  background-color:rgb(0, 0, 0);
+  cursor: pointer;
+  
+}
+
+.login-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.login-card > input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid crimson;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.login-btn > button,.quiz-card-try-again{
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100px;
+  background-color: crimson;
+  color: #fff;
+  border: 2.5px;
+  cursor: pointer;
+
+}
+.register-text{
+  text-decoration: none;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  margin: 25px;
+  opacity: 0.8;
+  font-size: 15px;
+}
+.register-text > .register-text-link{
+  text-decoration: none;
+  font-size: 15px;
+  color: crimson;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.score-card-text{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-size: 25px;
+  letter-spacing: 1.2px;
+  margin:10px;
 }
