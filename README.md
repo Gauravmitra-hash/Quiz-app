@@ -42,7 +42,7 @@ Simple Reactjs quiz app
 
 
 <!-- LICENSE -->
-## Screenshots of the applicatiob
+## Screenshots of the application
 
 <p align="center">
   <a href="#">
